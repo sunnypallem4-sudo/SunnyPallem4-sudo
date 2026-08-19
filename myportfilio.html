@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>My Portfolio | P.S.V.D. Sujith</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #0f172a;
+        color: white;
+        line-height: 1.6;
+    }
+
+    /* Navigation */
+    nav {
+        background: #020617;
+        padding: 18px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    nav h2 {
+        color: #38bdf8;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    nav ul li a:hover {
+        color: #38bdf8;
+    }
+
+    /* Hero Section */
+    .hero {
+        min-height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .hero-content {
+        max-width: 850px;
+    }
+
+    .profile-img {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 5px solid #38bdf8;
+        margin-bottom: 25px;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+        margin-bottom: 10px;
+    }
+
+    .hero h1 span {
+        color: #38bdf8;
+    }
+
+    .hero h3 {
+        font-size: 22px;
+        color: #cbd5e1;
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+        color: #94a3b8;
+        font-size: 18px;
+    }
+
+    .btn {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 12px 25px;
+        background: #38bdf8;
+        color: #020617;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+    }
+
+    .btn:hover {
+        background: #0ea5e9;
+        color: white;
+    }
+
+    /* Sections */
+    section {
+        padding: 80px 10%;
+    }
+
+    section h2 {
+        text-align: center;
+        font-size: 35px;
+        margin-bottom: 40px;
+        color: #38bdf8;
+    }
+
+    /* About */
+    .about-container {
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    .about-intro {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .about-intro h3 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .about-intro h3 span {
+        color: #38bdf8;
+    }
+
+    .tagline {
+        color: #38bdf8;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .about-intro p {
+        color: #cbd5e1;
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    .about-card {
+        background: #1e293b;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+    }
+
+    .about-card h3 {
+        color: #38bdf8;
+        margin-bottom: 20px;
+        font-size: 23px;
+    }
+
+    .about-card ul {
+        list-style: none;
+    }
+
+    .about-card ul li {
+        margin-bottom: 12px;
+        color: #cbd5e1;
+    }
+
+    /* Skills */
+    .skills-container {
+        max-width: 900px;
+        margin: auto;
+    }
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    .skill-card {
+        background: #1e293b;
+        padding: 30px;
+        border-radius: 15px;
+    }
+
+    .skill-card h3 {
+        color: #38bdf8;
+        margin-bottom: 15px;
+    }
+
+    .skill-card p {
+        color: #cbd5e1;
+        line-height: 2;
+    }
+
+    /* Education */
+    .education-card {
+        max-width: 750px;
+        margin: auto;
+        background: #1e293b;
+        padding: 35px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    }
+
+    .education-card h3 {
+        color: #38bdf8;
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+
+    .education-card p {
+        color: #cbd5e1;
+        margin: 8px 0;
+    }
+
+    /* Repository */
+    .repository {
+        max-width: 750px;
+        margin: auto;
+        background: #1e293b;
+        padding: 35px;
+        border-radius: 15px;
+        text-align: center;
+    }
+
+    .repository h3 {
+        color: #38bdf8;
+        margin-bottom: 15px;
+    }
+
+    .repository p {
+        color: #cbd5e1;
+        margin-bottom: 20px;
+    }
+
+    .repository a {
+        color: #38bdf8;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .repository a:hover {
+        text-decoration: underline;
+    }
+
+    /* GitHub Activity */
+    .github-activity {
+        max-width: 800px;
+        margin: auto;
+        text-align: center;
+        color: #cbd5e1;
+        font-size: 18px;
+    }
+
+    /* Connect */
+    .connect {
+        text-align: center;
+    }
+
+    .connect p {
+        color: #cbd5e1;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    /* Footer */
+    footer {
+        background: #020617;
+        text-align: center;
+        padding: 25px;
+        color: #94a3b8;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+
+        nav {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        nav ul {
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: 38px;
+        }
+
+        .hero h3 {
+            font-size: 18px;
+        }
+
+        .about-grid,
+        .skills-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- Navigation -->
+<nav>
+    <h2>Sunny</h2>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#github">GitHub</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+
+<!-- Home -->
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <!-- Replace profile.jpg with your actual image -->
+        <img src="profile.jpg"
+             alt="P.S.V.D. Sujith"
+             class="profile-img">
+
+        <h1>Hi, I'm <span>P.S.V.D. Sujith</span></h1>
+
+        <h3>🚀 Developer | Technology Enthusiast | Lifelong Learner</h3>
+
+        <p>
+            B.Tech Information Technology | 3rd Year
+        </p>
+
+        <p>
+            Andhra Loyola Institute of Engineering and Technology
+        </p>
+
+        <a href="#about" class="btn">Explore My Portfolio</a>
+
+    </div>
+
+</section>
+
+
+<!-- About Me -->
+<section id="about">
+
+    <h2>👋 About Me</h2>
+
+    <div class="about-container">
+
+        <div class="about-intro">
+
+            <h3>👋 Hi, I'm <span>Sunny Pallem</span></h3>
+
+            <div class="tagline">
+                🚀 Developer | Technology Enthusiast | Lifelong Learner
+            </div>
+
+            <p>
+                Welcome to my portfolio! I'm passionate about
+                <strong>software development, technology, problem-solving,
+                and building practical projects.</strong>
+            </p>
+
+            <p>
+                🎓 I am currently pursuing a
+                <strong>B.Tech in Information Technology (3rd Year)</strong>
+                at <strong>Andhra Loyola Institute of Engineering and Technology</strong>.
+                I am continuously developing my technical skills and exploring
+                new technologies through academic learning and hands-on projects.
+            </p>
+
+            <p>
+                I use GitHub to explore new technologies, develop projects,
+                improve my skills, and share my work with the developer community.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <!-- Personal Information -->
+            <div class="about-card">
+
+                <h3>🧑‍💻 About Me</h3>
+
+                <ul>
+                    <li>🎓 Pursuing <strong>B.Tech in Information Technology – 3rd Year</strong></li>
+
+                    <li>🏫 Student at
+                        <strong>Andhra Loyola Institute of Engineering and Technology</strong>
+                    </li>
+
+                    <li>🔭 Currently working on improving my development skills</li>
+
+                    <li>🌱 Continuously learning new technologies and tools</li>
+
+                    <li>💡 Interested in software development and innovative technology</li>
+
+                    <li>🛠️ Enjoy building projects and experimenting with new ideas</li>
+
+                    <li>🎯 Focused on continuous learning and professional growth</li>
+
+                    <li>🤝 Open to collaboration and interesting projects</li>
+                </ul>
+
+            </div>
+
+
+            <!-- Skills -->
+            <div class="about-card">
+
+                <h3>🛠️ Skills & Technologies</h3>
+
+                <h4>💻 Programming</h4>
+
+                <ul>
+                    <li>🐍 Python</li>
+                    <li>🌐 JavaScript</li>
+                    <li>🔵 HTML</li>
+                    <li>🎨 CSS</li>
+                </ul>
+
+                <br>
+
+                <h4>⚙️ Tools & Platforms</h4>
+
+                <ul>
+                    <li>🔧 Git</li>
+                    <li>🐙 GitHub</li>
+                    <li>💻 Visual Studio Code</li>
+                    <li>🐧 Linux</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Skills Section -->
+<section id="skills">
+
+    <h2>🛠️ Skills & Technologies</h2>
+
+    <div class="skills-container">
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <h3>💻 Programming</h3>
+
+                <p>
+                    Python<br>
+                    JavaScript<br>
+                    HTML<br>
+                    CSS
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>⚙️ Tools & Platforms</h3>
+
+                <p>
+                    Git<br>
+                    GitHub<br>
+                    Visual Studio Code<br>
+                    Linux
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Education -->
+<section id="education">
+
+    <h2>🎓 Education</h2>
+
+    <div class="education-card">
+
+        <h3>Bachelor of Technology (B.Tech)</h3>
+
+        <p><strong>Branch:</strong> Information Technology</p>
+
+        <p><strong>Year:</strong> 3rd Year</p>
+
+        <p>
+            <strong>Institution:</strong>
+            Andhra Loyola Institute of Engineering and Technology
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- GitHub -->
+<section id="github">
+
+    <h2>📌 Featured Repository</h2>
+
+    <div class="repository">
+
+        <h3>🌟 SunnyPallem4-sudo</h3>
+
+        <p>
+            This repository represents my GitHub profile and serves as a place
+            to showcase my development journey, projects, experiments,
+            and technical interests.
+        </p>
+
+        <a href="https://github.com/sunnypallem4-sudo/SunnyPallem4-sudo"
+           target="_blank">
+            🔗 Visit My GitHub Repository
+        </a>
+
+    </div>
+
+    <br><br>
+
+    <div class="github-activity">
+
+        <p>
+            📊 I believe in learning by building. My GitHub repositories
+            reflect my progress, experiments, and projects as I continue
+            developing my technical skills.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- Contact -->
+<section id="contact">
+
+    <h2>🤝 Let's Connect</h2>
+
+    <div class="connect">
+
+        <p>
+            I'm always interested in connecting with other developers,
+            learning from the community, and collaborating on interesting projects.
+        </p>
+
+        <p>
+            <strong>Thanks for visiting my portfolio! ⭐</strong>
+        </p>
+
+        <p>
+            If you find something useful here, feel free to
+            <strong>star a repository</strong> or connect with me.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- Footer -->
+<footer>
+
+    <p>💙 Keep Learning. Keep Building. Keep Growing.</p>
+
+    <p>
+        © 2026 P.S.V.D. Sujith (Sunny). All Rights Reserved.
+    </p>
+
+</footer>
+```
+
+</body>
+</html>
